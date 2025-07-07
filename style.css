@@ -1,9 +1,14 @@
 *{
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: vag-rundschrift-d, sans-serif; 
 }
 
 html { scroll-behavior: smooth; } /*Supposed to enable Smooth Scrolling through an anchor link*/
+
+body {
+    min-height: 100vh;
+}
 
 header{
     display: flex;
@@ -12,8 +17,8 @@ header{
     position: sticky;
     top: 0px;
     background-color: white;
-    z-index: 1;
-
+    z-index: 100;
+    
 }
 
 header img{
@@ -31,18 +36,49 @@ nav ul{
     font-size: 1.3em;
 }
 
-nav li a{
+nav a{
     transition: all ease 0.2s;
     padding: 2px 20px;
     text-decoration: none;
     color: #da1884;
     border-radius: 10px;
+    align-items: center;
+    display: flex;
 }
 
 nav li a:hover{
     background-color: #da1884;
     color: rgb(255, 255, 255);
     border-radius: 10px;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px black;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+    margin: 10px;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button{
+    display: none;
 }
 
 .hero{
@@ -63,127 +99,231 @@ nav li a:hover{
     display: grid;
     justify-items: end;
     margin: 5%;
+    color:navy;
+    font-size: 1.5em;
+}
+
+.hero_text a{
+    text-decoration: none;
+    color: white;
+    background-color: #da1884;
+    border-radius: 15px;
+    font-size: 1.5em;
+    padding: 10px 30px 10px 30px
 }
 
 .Productos_Container{
     background-color: #da1884;
     padding: 10%;
-}
-
-.Productos_Container img {
-    width: 500px;
-}
-
-.Productos_Container p{
-    font-size: 24px;
-    text-align: center;
+    height: 100%;
 }
 
 .Productos_Container article{
     display: flex;
     background-color: white;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 20px;
-
-}
-
-.Productos_Container a{
-    text-decoration: none;
-}
-
-.Testimonios{
-    display: flex;
-    margin: 10%;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 125px;
-}
-
-.Testimonios img{
-    width: 20%;
-}
-
-
-form{
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    max-width: 750px;
-    max-height: 600px;
-    text-align: center;
-    padding: 1em;
-    border-radius: 1em;
-    background-color: #da1884;
+    margin-top: 0px;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 50px;
-    justify-content: center;
-    height: 600px;
+    padding: 5px;
+    border-radius: 60px;
+    height: 450px;
+    
 }
+/* .Productos_Container img {
+    width: 100%;
+    object-fit: contain;
+    } */
+    
+    .Products_text {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .Productos_Container p{
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    
+    .Productos_Container a{
+        text-decoration: none;
+        background-color: #da1884;
+        color: white;
+        border-radius: 20px;
+        margin-top: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 24px;
+        padding-right: 24px;
+        font-size: 34px;
+    }
+    
+    
+    .Testimonios {
+        max-width: 1080px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .Testimonios article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10%;
+        text-align: center;
+        font-size: 30px;
+        padding-top: 150px;
+        padding-bottom: 50px;
+    }
+    
+    .form_container{
+        padding-top: 75px;
+    }
 
-input{
-    width: 80%;
-    box-sizing: border-box;
-    height: 75px;
-    border: none;
-    border-radius: 5px;
-    margin: 15px;
-}
+    form{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 750px;
+        max-height: 600px;
+        text-align: center;
+        border-radius: 100px;
+        background-color: #da1884;
+        margin-bottom: 50px;
+        justify-content: center;
+        height: 600px;
+    }
+    
+    input{
+        width: 80%;
+        box-sizing: border-box;
+        height: 75px;
+        border: none;
+        border-radius: 5px;
+        margin: 15px;
+    }
+    
+    p button {
+        transition: all ease 0.2s;
+        width: 300px;
+        height: 75px;
+        background-color: rgb(0, 255, 255);
+        border: none;
+        border-radius: 5px;
+        margin: 10px;
+        font-size: 20px;
+    }
+    
+    p button:hover {
+        background-color: rgb(186, 255, 255);
+        cursor: pointer;
+    } 
 
-p button {
-    width: 50%;
-    height: 300%;
-    background-color: rgba(0, 255, 255, 0.904);
-    border: none;
-    border-radius: 5px;
-}
-
-
-footer{
-    display: flex;
-    background-color: #da1884;
-    justify-content: space-evenly;
-}
-
-.direction {
-    margin: 20px;
-}
-
-.phone_number_company {
-    margin: 20px;
-}
-
-.social_media_links {
-  margin: 20px; 
-}
-
-.housekeeping{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px;
-}
-
-.housekeeping a{
-    text-decoration: none;
-    color: black;
-}
-
-footer ul{
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-}
-
-footer img{
-    width: 40px;
-    margin: 10px;
-}
-
-@media (width<1080px) {
-    .hero {
-        height: 50vh;
+    .title_form {
+        font-size: 36px;
+    }
+    
+    footer{
+        display: flex;
+        background-color: #da1884;
+        justify-content: space-evenly;
+    }
+    
+    .direction {
+        margin: 20px;
+    }
+    
+    .phone_number_company {
+        margin: 20px;
+    }
+    
+    .social_media_links {
+        margin: 20px; 
+    }
+    
+    .housekeeping{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px;
+    }
+    
+    .housekeeping a{
+        text-decoration: none;
+        color: black;
         
+    }
+    
+    footer ul{
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    footer img{
+        width: 40px;
+        margin: 10px;
+    }
+    
+    .swiper {
+        width: 100%;
+        min-width: 250px;
+    }
+    
+    .swiper-slide{
+        margin-bottom: 50px;
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+    .swiper-pagination{
+        --swiper-pagination-bullet-width: 15px;
+        --swiper-pagination-bullet-height: 15px
+    }
+
+    .testimonies_slider{
+        width: 100%;
+
+    }
+    .Testimonios img {
+        width: 40%;
+    }
+    
+    
+    .slide_in{
+        opacity: 0;
+        animation: slide_in 0.5s ease-out forwards
+    }
+    
+    @keyframes slide_in{
+        from{
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+@media (width<1550px) {
+    .hero {
+        height: 65vh;
+        
+    }
+
+    .hero_text {
+        font-size: 1em;
     }
 
     .Productos_Container {
@@ -194,52 +334,105 @@ footer img{
         margin-top: 100px;
     }
 
-    .Productos_Container img{
-        width: 250px;
+    /* .Productos_Container img{
+        width: 400px;
+    } */
+
+    .Productos_Container p{
+        font-size: 24px;
     }
 }
 
+@media (width<1080px) {
+    /* .Productos_Container img {
+        width: 250px;
+    } */
+
+    /* .swiper-slide img{
+        width: 100%;
+    } */
+}
 
 
-/* section {
-    height: 100vh;
-    border: 10px solid blue;
+@media (width<850px) {
 
-} */
-
-/* .Productos_Container{
-    position: sticky;
-    top: 100px;
-    padding-top: 150px;
-    height: 100px;
-
-} */
-
-/* header{
-    position: sticky;
-    top: 0;
-    background-color:aquamarine;
-    z-index: 1;
-} */
-
-/* img{
-    position: sticky;
-    top: 0;
-} */
-
-/* h1 {
-    position: sticky;
-    top: 100px;
-}  */
-
-/* @media (width<480px) {
-    header {
-        background-color: azure;
+    .hero_text {
+        font-size: 0.85em;
     }
 
-    h1 {
-        font-size: 12px;
+    .hideOnMobile{
+        display: none;
     }
-} */
+
+    .menu-button{
+        display: block;
+    }
+
+    .Testimonios img{
+        width: 40%;
+    }
+
+    .Productos_Container p {
+        font-size: 20px;
+    }
+
+    .Productos_Container a {
+        font-size: 30px;
+    }
+
+    /* .Productos_Container img {
+        width: 200px;
+    } */
+
+    .swiper {
+        min-width: 200px;
+    }
+
+    form {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media (width<565px) {
+
+    .sidebar{
+        width: 100%;
+    }
+
+    .Testimonios img{
+        width: 60%;
+    }
+
+    .Productos_Container article{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+
+    .Productos_Container p{
+        font-size: 16px;
+    }
+
+    .Productos_Container a{
+        font-size: 17px;
+    }
+
+    footer{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Testimonios article{
+        font-size: 24px;
+    }
+
+    .swiper{
+        max-width: 250px;
+    }
+
+}
  
 /* With @media you can control css propeties depending on the size of the screen */
