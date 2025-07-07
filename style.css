@@ -104,12 +104,20 @@ nav li a:hover{
 }
 
 .hero_text a{
+    transition: all ease 0.2s;
     text-decoration: none;
     color: white;
     background-color: #da1884;
     border-radius: 15px;
     font-size: 1.5em;
     padding: 10px 30px 10px 30px
+}
+
+.hero_text a:hover{
+    color: #da1884;
+    background-color: white;
+    border: solid;
+    border-color: #da1884;
 }
 
 .Productos_Container{
@@ -149,6 +157,7 @@ nav li a:hover{
     
     
     .Productos_Container a{
+        transition: all ease 0.2s;
         text-decoration: none;
         background-color: #da1884;
         color: white;
@@ -159,6 +168,13 @@ nav li a:hover{
         padding-left: 24px;
         padding-right: 24px;
         font-size: 34px;
+    }
+
+    .Productos_Container a:hover{
+        color: #da1884;
+        background-color: white;
+        border: solid;
+        border-color: #da1884;   
     }
     
     
